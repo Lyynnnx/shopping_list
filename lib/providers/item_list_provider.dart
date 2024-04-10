@@ -40,9 +40,13 @@ class ListNotifier extends StateNotifier<List<GroceryItem>> {
     state = state.where((element) => element.id != item.id).toList();
   }
 
+
+
+
+
   void getList(WidgetRef ref) async {
     ref.read(isLoadingProvdier.notifier).update((ref) => true);
-    final url = Uri.https('fluttter-prep-d00b4-default-rtdb.firebase.com',
+    final url = Uri.https('flutter-prep-d00b4-default-rtdb.firebaseio.com',
         '10april.json'); //указываем ссылку
     final response = await http.get(url,
        ); //получаем json
